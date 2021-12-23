@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable jsx-a11y/alt-text */
 import logo from './logo.svg';
 import './App.css';
 import liff from '@line/liff';
@@ -10,6 +12,7 @@ function App() {
 	const [displayName, setDisplayName] = useState("");
 	const [statusMessage, setStatusMessage] = useState("");
 	const [userId, setUserId] = useState("");
+	const [accessToken, setAccessToken] = useState("")
 
 	const logout = () => {
 		liff.logout();
@@ -29,6 +32,8 @@ function App() {
 	const runApp = () => {
 		const idToken = liff.getIDToken();
 		setIdToken(idToken);
+		const accessToken = liff.getAccessToken();
+		setAccessToken(accessToken);
 		liff.getProfile().then(profile => {
 			console.log(profile);
 			setDisplayName(profile.displayName);
@@ -53,6 +58,7 @@ function App() {
 					<p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>display name: </b> {displayName}</p>
 					<p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>status message: </b> {statusMessage}</p>
 					<p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>user id: </b> {userId}</p>
+					<p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>access token: </b> {accessToken}</p>
 
 					<button onClick={() => logout()} style={{ width: "100%", height: 30 }}>Logout</button>
 				</div>
