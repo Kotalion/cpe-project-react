@@ -5,10 +5,10 @@ async function auth() {
         const response = await axios.get("https://notify-bot.line.me/oauth/authorize", {
             response_type: "code",
             client_id: "0XzEIwGNTpKlwlW7SbVxoZ",
-            redirect_uri: "https://a9ac-110-168-65-102.jp.ngrok.io/RequestNotify",
+            redirect_uri: "https://cpe-project-react.herokuapp.com/",
             scope: "notify"
         });
-        console.log(response);
+        console.log("This is auth", response);
         return response;
     } catch (error) {
         console.log(error);

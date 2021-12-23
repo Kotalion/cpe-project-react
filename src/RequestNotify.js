@@ -5,7 +5,7 @@ class RequestNotify extends Component {
 
     componentDidMount = async () => {
         const response = await auth();
-        console.log(response.code)
+        console.log(response)
     };
 
     render() {
