@@ -1,17 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import {
+	BrowserRouter as Router,
+	Routes,
+	Route,
+  } from "react-router-dom";
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import RequestNotify from './RequestNotify';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+export default function Apptest() {
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+	return (
+
+		  <Router>
+			<Routes>
+			  <Route exact path="/" element={<App />} />
+			  <Route exact path="/RequestNotify" element={<RequestNotify />} />
+			</Routes>
+		  </Router>
+	)
+  }
+  
+  ReactDOM.render(<Apptest />, document.getElementById('root'))
+  
