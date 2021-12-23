@@ -13,6 +13,7 @@ function App() {
 	const [statusMessage, setStatusMessage] = useState("");
 	const [userId, setUserId] = useState("");
 	const [accessToken, setAccessToken] = useState("")
+	const [email, setEmail] = useState("")
 
 	const logout = () => {
 		liff.logout();
@@ -34,6 +35,8 @@ function App() {
 		setIdToken(idToken);
 		const accessToken = liff.getAccessToken();
 		setAccessToken(accessToken);
+		const email = liff.email();
+		setEmail(email);
 		liff.getProfile().then(profile => {
 			console.log(profile);
 			setDisplayName(profile.displayName);
@@ -59,6 +62,7 @@ function App() {
 					<p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>status message: </b> {statusMessage}</p>
 					<p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>user id: </b> {userId}</p>
 					<p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>access token: </b> {accessToken}</p>
+					<p style={{ textAlign: "left", marginLeft: "20%", marginRight: "20%", wordBreak: "break-all" }}><b>email: </b> {email}</p>
 
 					<button onClick={() => logout()} style={{ width: "100%", height: 30 }}>Logout</button>
 				</div>
