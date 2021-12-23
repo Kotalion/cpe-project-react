@@ -35,7 +35,7 @@ function App() {
 		setIdToken(idToken);
 		const accessToken = liff.getAccessToken();
 		setAccessToken(accessToken);
-		const email = liff.email();
+		const email = liff.getDecodedIDToken().email();
 		setEmail(email);
 		liff.getProfile().then(profile => {
 			console.log(profile);
