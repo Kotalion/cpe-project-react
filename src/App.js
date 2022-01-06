@@ -68,7 +68,6 @@ function App() {
 					<button onClick={() => logout()} style={{ width: "100%", height: 30 }}>Logout</button>
 				</div>
 			</header>
-			<RequestNotify/>
 		</div>
 	);
 }
