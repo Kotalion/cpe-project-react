@@ -1,12 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
     <title>Request Token</title>
+
+    <link href="/public/bootstrap-5.0.2-dist/css/styles.css" rel="stylesheet" />
 </head>
 <body>
+     <!-- Navbar-->
+     <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="Home.html">Notify</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="Home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="requestToken.html">Request Token</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="sendToken.html">Send Token</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="aboutMe.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+         <!-- Page Header-->
+         <header class="masthead" style="background-image: url('/img/token.jpg')">
+            <div class="container position-relative px-2 px-lg-2">
+                <div class="row gx-2 gx-lg-2 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Request Token </h1>
+                            <span class="subheading">วิธีการขอ Token จาก Line Notify</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container px-2 px-lg-5">
+            <div class="row gx-2 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                <h2>ขั้นตอนการออก Token</h2>
+                <p>ขั้นตอนที่ 1 : ทำการเข้าที่เว็บไซต์  <a href="https://notify-bot.line.me/th/">https://notify-bot.line.me/th/  </a>
+                    <br>เพื่อที่จะทำการขอ Token ทำการคลิก "เข้าสู่ระบบ"</p>
+                <img src="/img/1.2.png" alt="img" height="500" width="700">
+                
+
+                <br>
+                <p>ขั้นตอนที่ 2 : ทำการเข้าสู่ระบบของ Line </p>
+                <img src="/img/2.png" alt="img" height="500" width="700">
+
+
+
+                <br>
+                <p>ขั้นตอนที่ 3 : ให้ทำการคลิกที่ชื่อแล้วเลือก "หน้าของฉัน" </p>
+                <img src="/img/3.png" alt="img" height="500" width="700">
+                
+                <br>
+                <p>ขั้นตอนที่ 4 : ให้ทำการกด ออก Token </p>
+                <img src="/img/4.2.png" alt="img" height="500" width="700">
+
+                <br>
+                <p>ขั้นตอนที่ 5 : จะได้หน้าการออก Token </p>
+                <img src="/img/5.png" alt="img" height="500" width="700">
+
+                <br>
+                <p>ขั้นตอนที่ 6 : ขั้นตอนการออก <br>
+                1. ให้ทำการใส่ชื่อแจ้งเตือนเป็น Exam Notify <br>
+                2. ให้ทำการเลือก "รับการแจ้งเตือนแบบตัวต่อตัวจาก Line Notify" <br>
+                3. ให้ทำการออก Token </p>
+                <img src="/img/6.2.png" alt="img" height="500" width="700">
+
+                <br>
+                <p>ขั้นตอนที่ 7 : ให้ทำการกด "คัดลอก" </p>
+                <img src="/img/7.png" alt="img" height="500" width="700">
+
+                <br>
+                
+                <p>ขั้นตอนที่ 8 : ทำการคลิกที่หน้าเว็บไซด์  <a href="http://127.0.0.1:5500/public/sendToken.html">"SEND TOKEN" </a>
+                    <br>ทำการกรอกชื่อ(ไม่ต้องมีคำนำหน้า) และนำ Token ที่ออกมานำมาใส่และทำการกดส่ง</p>
+                 <img src="/img/8.png" alt="img" height="500" width="700">
+                
+
+                
+        
     
+
 </body>
 </html>
