@@ -8,6 +8,7 @@
     <link href="/public/bootstrap-5.0.2-dist/css/styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <script src= "bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/read-excel-file@5.x/bundle/read-excel-file.min.js"></script>
     
     
 </head>
@@ -49,6 +50,45 @@
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
+                <input type="file" id="input" />
+                <div id="dvTable"></div>
+                
+                <script type="text/javascript">
+                    var input = document.getElementById('input')
+                    input.addEventListener('change', function() {
+                        readXlsxFile(input.files[0]).then(function(rows) {
+
+                            //Create a HTML Table element.
+                            var table = document.createElement("TABLE");
+                            table.border = "1";
+                    
+                            //Get the count of columns.
+                            var columnCount = rows[0].length;
+                    
+                            //Add the header row.
+                            var row = table.insertRow(-1);
+                            for (var i = 0; i < columnCount; i++) {
+                                var headerCell = document.createElement("TH");
+                                headerCell.innerHTML = rows[0][i];
+                                row.appendChild(headerCell);
+                            }
+                    
+                            //Add the data rows.
+                            for (var i = 1; i < rows.length; i++) {
+                                row = table.insertRow(-1);
+                                for (var j = 0; j < columnCount; j++) {
+                                    var cell = row.insertCell(-1);
+                                    cell.innerHTML = rows[i][j];
+                                }
+                            }
+                    
+                            var dvTable = document.getElementById("dvTable");
+                            dvTable.innerHTML = "";
+                            dvTable.appendChild(table);
+                        })
+                    })
+                </script>
+                
   
 </body>
 </html>
