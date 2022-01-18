@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="/public/bootstrap-5.0.2-dist/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <script src= "bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/read-excel-file@5.x/bundle/read-excel-file.min.js"></script>
+    
+    
+</head>
+<body>
+    <!-- Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="Home.html">Notify</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="Home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="requestToken.html">Request Token</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="sendToken.html">Send Token</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="aboutMe.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+     <!-- Page Header-->
+     <header class="masthead" style="background-image: url('/img/home.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>Home Page </h1>
+                        <span class="subheading">ระบบการแจ้งเตือนผ่านทาง Line Notify</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content-->
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <input type="file" id="input" />
+                <div id="dvTable"></div>
+                
+                <script type="text/javascript">
+                    var input = document.getElementById('input')
+                    input.addEventListener('change', function() {
+                        readXlsxFile(input.files[0]).then(function(rows) {
+
+                            //Create a HTML Table element.
+                            var table = document.createElement("TABLE");
+                            table.border = "1";
+                    
+                            //Get the count of columns.
+                            var columnCount = rows[0].length;
+                    
+                            //Add the header row.
+                            var row = table.insertRow(-1);
+                            for (var i = 0; i < columnCount; i++) {
+                                var headerCell = document.createElement("TH");
+                                headerCell.innerHTML = rows[0][i];
+                                row.appendChild(headerCell);
+                            }
+                    
+                            //Add the data rows.
+                            for (var i = 1; i < rows.length; i++) {
+                                row = table.insertRow(-1);
+                                for (var j = 0; j < columnCount; j++) {
+                                    var cell = row.insertCell(-1);
+                                    cell.innerHTML = rows[i][j];
+                                }
+                            }
+                    
+                            var dvTable = document.getElementById("dvTable");
+                            dvTable.innerHTML = "";
+                            dvTable.appendChild(table);
+                        })
+                    })
+                </script>
+                
+  
+</body>
+</html>
