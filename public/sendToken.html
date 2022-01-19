@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Send Token</title>
+
+    <link href="/public/bootstrap-5.0.2-dist/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+     <!-- Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="Home.html">Notify</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="Home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="requestToken.html">Request Token</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="sendToken.html">Send Token</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="aboutMe.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- เนื้อหา-->
+    <header class="masthead" style="background-image: url('/img/send.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="page-heading">
+                        <h1>Send Token</h1>
+                        <span class="subheading">สามารถดูการออก Token ได้จาก Request Token</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ส่วนของรายละเอียด-->
+    <main class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="my-5">
+
+                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <div class="form-floating">
+                                <input class="form-control" id="name" type="text" placeholder="Enter your name..."
+                                    data-sb-validations="required" />
+                                    
+                                <label for="name">Name (ไม่จำเป็นต้องกรอกคำนำหน้า)</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">จำเป็นต้องใส่ชื่อ</div>
+                            </div>
+                            <br>
+                            <div class="form-floating">
+                                <input class="form-control" id="token" type="text" placeholder="Enter your email..."
+                                    data-sb-validations="required" />
+                                <label for="token">Token</label>
+                                <div class="invalid-feedback" data-sb-feedback="token:required">จำเป็นต้องใส่ Token
+                                </div>
+                                <br>
+                            
+                            </div>
+
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">ส่งสำเร็จ!</div>
+
+                                    <br />
+                                    <a
+                                        href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                </div>
+                            </div>
+
+                            <div class="d-none" id="submitErrorMessage">
+                                <div class="text-center text-danger mb-3">เกิดข้อผิดพลาดเกิดขึ้น!</div>
+                            </div>
+
+                            <button class="btn btn-primary text-uppercase disabled" id="submitButton"
+                                type="submit">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="/public/bootstrap-5.0.2-dist/js/scripts.js"></script>
+    
+    
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>

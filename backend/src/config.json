@@ -1,0 +1,6 @@
+{
+  "port": 7000,
+  "clientID": "0XzEIwGNTpKlwlW7SbVxoZ",
+  "redirectURL": "http://localhost:7000/api/notify",
+  "clientSecret": "RNMSRtu4FRiyHLw40F4RewfDxNEHQR6LtKQjeDP7z5l"
+}
